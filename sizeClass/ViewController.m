@@ -20,17 +20,21 @@
 
 @implementation ViewController
 - (IBAction)back:(id)sender {
-    if ([[UIDevice currentDevice] respondsToSelector:@selector(setOrientation:)]) {
+//    if ([[UIDevice currentDevice] respondsToSelector:@selector(setOrientation:)]) {
+//        
+//        objc_msgSend([UIDevice currentDevice], @selector(setOrientation:), UIInterfaceOrientationPortrait);
+//    }
+    
+    [[UIDevice currentDevice] setValue:[NSNumber numberWithInteger:UIInterfaceOrientationPortrait] forKey:@"orientation"];
 
-        objc_msgSend([UIDevice currentDevice], @selector(setOrientation:), UIInterfaceOrientationPortrait);
-    }
 }
 - (IBAction)fullScreen:(id)sender {
-    if ([[UIDevice currentDevice] respondsToSelector:@selector(setOrientation:)]) {
-
-        objc_msgSend([UIDevice currentDevice], @selector(setOrientation:), UIInterfaceOrientationLandscapeLeft);
-    }
+//    if ([[UIDevice currentDevice] respondsToSelector:@selector(setOrientation:)]) {
+//
+//        objc_msgSend([UIDevice currentDevice], @selector(setOrientation:), UIInterfaceOrientationLandscapeLeft);
+//    }
     
+    [[UIDevice currentDevice] setValue:[NSNumber numberWithInteger:UIInterfaceOrientationLandscapeLeft] forKey:@"orientation"];
 }
 
 - (void)viewDidLoad {
